@@ -128,15 +128,15 @@ export default function LoginScreen() {
                 />
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="w-full bg-gradient-to-r from-os-cyan to-os-neon text-os-dark font-bold py-3 rounded-lg flex items-center justify-center gap-2 mt-6 hover:shadow-[0_0_15px_rgba(0,217,255,0.8)] transition-all"
-              >
-                <Lock className="w-5 h-5" />
-                Login as Doctor
-              </motion.button>
+                <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-os-blue to-os-cyan text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 mt-6 hover:shadow-[0_0_15px_rgba(6,182,212,0.6)] transition-all"
+                >
+                    <Lock className="w-5 h-5" />
+                    Login as Doctor
+                </motion.button>
             </form>
           </div>
         </div>
