@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Hospital Queue OS - Smart Appointment System',
+  title: 'Niramaya - Smart Appointment System',
   description: 'AI-powered hospital queue and appointment optimization system',
 }
 
