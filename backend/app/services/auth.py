@@ -2,6 +2,7 @@ import os
 from datetime import datetime, timedelta
 from passlib.context import CryptContext
 import jwt
+from fastapi import Depends, HTTPException, status
 from jwt.exceptions import InvalidTokenError
 from fastapi.security import OAuth2PasswordBearer
 from dotenv import load_dotenv
