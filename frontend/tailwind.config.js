@@ -13,6 +13,13 @@ module.exports = {
         'os-cyan': '#06b6d4',
         'os-neon': '#00d9ff',
         'os-glass': 'rgba(30, 58, 138, 0.1)',
+        'os-success': '#10b981',
+        'os-warning': '#f59e0b',
+        'os-error': '#ef4444',
+        'os-info': '#8b5cf6',
+        'os-border-glow': 'rgba(0, 217, 255, 0.3)',
+        'os-hover': 'rgba(6, 182, 212, 0.2)',
+        'os-shadow-glow': 'rgba(0, 217, 255, 0.6)',
       },
       backdropBlur: {
         'os': '20px',

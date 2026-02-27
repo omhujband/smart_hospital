@@ -5,10 +5,10 @@ from app.models.models import Patient
 from app.models.schemas import PatientCreate, PatientResponse
 from typing import List
 
-router = APIRouter(prefix="/patients", tags=["patients"])
+router = APIRouter(prefix="/receptionist/patients", tags=["Receptionist - Patients"])
 
 @router.post("/", response_model=PatientResponse)
-def create_patient(patient: PatientCreate, db: Session = Depends(get_db)):
+def onboard_patient(patient: PatientCreate, db: Session = Depends(get_db)):
     """Register a new patient"""
     db_patient = Patient(**patient.dict())
     db.add(db_patient)
