@@ -16,8 +16,12 @@ if not SQLALCHEMY_DATABASE_URL:
 
 # 3. Create the SQLAlchemy engine 
 # Notice we removed connect_args={"check_same_thread": False} because that is only for SQLite
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL,
+    pool_pre_ping=True,      # Tests the connection before every request
+    pool_recycle=300,        # Recycles connections older than 5 minutes
+    pool_timeout=30          # Wait up to 30 seconds for a connection if busy
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()

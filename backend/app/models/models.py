@@ -72,3 +72,22 @@ class QueueMetrics(Base):
     avg_consultation_time = Column(Float)
     doctor_utilization = Column(Float)
     department = Column(Enum(DepartmentType))
+
+
+import enum
+from sqlalchemy import Enum # Make sure this is imported if it isn't already
+
+class UserRole(enum.Enum):
+    RECEPTIONIST = "Receptionist"
+    DOCTOR = "Doctor"
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True, nullable=False)
+    hashed_password = Column(String, nullable=False)
+    role = Column(Enum(UserRole), default=UserRole.RECEPTIONIST)
+
+    # If the user is a doctor, we link them to their doctor profile
+    doctor_id = Column(Integer, ForeignKey("doctors.id"), nullable=True)
